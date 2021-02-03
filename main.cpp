@@ -22,28 +22,31 @@ void press(char a,int special = -404)
 		keybd_event(VkKeyScan(a), 1, KEYEVENTF_KEYUP, 0);
 		break;
 	case 1: 
-		keybd_event(VkKeyScan(VK_SPACE), 1, 0, 0);
+		keybd_event(VK_SPACE, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 		Sleep(5);
-		keybd_event(VkKeyScan(VK_SPACE), 1, KEYEVENTF_KEYUP, 0);
+		keybd_event(VK_SPACE, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		break;
 	case 2:
-		keybd_event(VkKeyScan(VK_RETURN), 1, 0, 0);
+		keybd_event(VK_RETURN, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 		Sleep(5);
-		keybd_event(VkKeyScan(VK_RETURN), 1, KEYEVENTF_KEYUP, 0);
+		keybd_event(VK_RETURN, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		break;
 	case 3:
-		keybd_event(VkKeyScan(VK_CAPITAL), 1, 0, 0);
+		keybd_event(VK_CAPITAL, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 		Sleep(5);
-		keybd_event(VkKeyScan(VK_CAPITAL), 1, KEYEVENTF_KEYUP, 0);
+		keybd_event(VK_CAPITAL, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		break;
 	case 4:
-		keybd_event(VkKeyScan(VK_BACK), 1, 0, 0);
+		keybd_event(VK_BACK, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 		Sleep(5);
-		keybd_event(VkKeyScan(VK_BACK), 1, KEYEVENTF_KEYUP, 0);
+		keybd_event(VK_BACK, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		break;
 	}
 
 }
+
+
+
 
 int main()
 {
@@ -80,15 +83,15 @@ int main()
 						special = true;
 						break;
 						}
-				case 3: keybd_event(VkKeyScan(VK_SHIFT), 1, 0, 0); special = true; break;
-				case 4: keybd_event(VkKeyScan(VK_SHIFT), 1, KEYEVENTF_KEYUP, 0); special = true; break;
-				case 5: keybd_event(VkKeyScan(VK_LWIN), 1, 0, 0); special = true; break;
-				case 6: keybd_event(VkKeyScan(VK_LWIN), 1, KEYEVENTF_KEYUP, 0); special = true; break;
+				case 3: keybd_event(VK_SHIFT, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0); special = true; break;
+				case 4: keybd_event(VK_SHIFT, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
+				case 5: keybd_event(VK_LWIN, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0); special = true; break;
+				case 6: keybd_event(VK_LWIN, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
 				case 7: press('x', 2); special = true; break;
 				case 8: press('x', 3); special = true; break;
 				case 9: press('x', 4); special = true; break;
-				case 10: keybd_event(VkKeyScan(VK_CONTROL), 1, 0, 0); special = true; break;
-				case 11: keybd_event(VkKeyScan(VK_CONTROL), 1, KEYEVENTF_KEYUP, 0); special = true; break;
+				case 10: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0); special = true; break;
+				case 11: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
 				}
 			}
 		}
@@ -99,4 +102,5 @@ int main()
 /*Errors:
 1 payload.ini probably dont exists
 */
+
 
