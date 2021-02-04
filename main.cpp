@@ -102,7 +102,12 @@ int main()
 				case 6: keybd_event(VK_LWIN, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
 				case 7: press('x', 2); special = true; break;
 				case 8: press('x', 3); special = true; break;
-				case 9: press('x', 4); special = true; break;
+				case 9: {
+					buff.erase(0, 9);
+					int times = atoi(buff.c_str());
+					for(int i = 0; i < times; i++) press('x', 4);
+					special = true; break;
+				}
 				case 10: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0); special = true; break;
 				case 11: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
 				case 12: 
