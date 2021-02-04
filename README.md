@@ -15,9 +15,10 @@ put payload.ini in same directory, available commands:
 
 You can use just chars (space included) in other lines\
 If u want chars like ?!@# u should:\
-`SHIFTDOWN
+```SHIFTDOWN
 /
 1
 2
 3
-SHIFTUP`
+SHIFTUP
+```
