@@ -9,7 +9,7 @@ put payload.ini in same directory, available commands:
 * `WINDOWSUP` - To unpress windows key
 * `ENTER` - To press enter
 * `CAPSLOCK` - To press capslock
-* `BACKSPACE <integer>` - To press backspace `<integer times>`
+* `BACKSPACE` - To press backspace, you can too write `BACKSPACE <times>`
 * `CTRLDOWN` - To press ctrl
 * `CTRLUP` - To unpress ctrl
 * `CLIPBOARD` - To copy something to clipboard
