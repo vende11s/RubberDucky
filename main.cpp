@@ -45,13 +45,26 @@ void press(char a,int special = -404)
 
 }
 
-
-
+//Function from http://www.cplusplus.com/forum/general/48837/
+void toClipboard(HWND hwnd, string& s) {
+	OpenClipboard(hwnd);
+	EmptyClipboard();
+	HGLOBAL hg = GlobalAlloc(GMEM_MOVEABLE, s.size() + 1);
+	if (!hg) {
+		CloseClipboard();
+		return;
+	}
+	memcpy(GlobalLock(hg), s.c_str(), s.size() + 1);
+	GlobalUnlock(hg);
+	SetClipboardData(CF_TEXT, hg);
+	CloseClipboard();
+	GlobalFree(hg);
+}
 
 int main()
 {
 	ShowWindow(GetConsoleWindow(), SW_HIDE);
-	string alias[] = { "REM","STRING","DELAY","SHIFTDOWN","SHIFTUP","WINDOWSDOWN","WINDOWSUP","ENTER","CAPSLOCK","BACKSPACE","CTRLDOWN","CTRLUP"};
+	string alias[] = { "REM","STRING","DELAY","SHIFTDOWN","SHIFTUP","WINDOWSDOWN","WINDOWSUP","ENTER","CAPSLOCK","BACKSPACE","CTRLDOWN","CTRLUP","CLIPBOARD"};
 	fstream file;
 	file.open("payload.ini");
 	if (!file.good()) { cerr << "1"; return 1; }
@@ -92,6 +105,12 @@ int main()
 				case 9: press('x', 4); special = true; break;
 				case 10: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0); special = true; break;
 				case 11: keybd_event(VK_CONTROL, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0); special = true; break;
+				case 12: 
+					buff.erase(0, 10);
+					toClipboard(NULL, buff);
+					special = true;
+					break;
+
 				}
 			}
 		}
