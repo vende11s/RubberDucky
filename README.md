@@ -14,8 +14,9 @@ put payload.ini in same directory, available commands:
 * `CTRLUP` - To unpress ctrl
 
 You can use just chars (space included) in other lines\
-If u want chars like ?!@# u should:\
-```SHIFTDOWN
+If u want chars like ?!@# u should:  
+```
+SHIFTDOWN
 /
 1
 2
