@@ -119,7 +119,7 @@ int main()
 				}
 			}
 		}
-		if (!special)press(buff[0]);
+		if (!special)if(!buff.empty())press(buff[0]);
 	}
 	file.close();
 }
