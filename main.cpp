@@ -104,7 +104,9 @@ int main()
 				case 8: press('x', 3); special = true; break;
 				case 9: {
 					buff.erase(0, 9);
-					int times = atoi(buff.c_str());
+					int times;
+					if (buff == " "||buff.empty()) times = 1;
+					else times = atoi(buff.c_str());
 					for(int i = 0; i < times; i++) press('x', 4);
 					special = true; break;
 				}
@@ -122,9 +124,8 @@ int main()
 		if (!special)if(!buff.empty())press(buff[0]);
 	}
 	file.close();
+
 }
 /*Errors:
 1 payload.ini probably dont exists
 */
-
-
