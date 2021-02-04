@@ -13,8 +13,8 @@ put payload.ini in same directory, available commands:
 * `CTRLDOWN` - To press ctrl
 * `CTRLUP` - To unpress ctrl
 
-You can use just chars(space included) in other lines
-If u want chars like ?!@# u should:
+You can use just chars (space included) in other lines\
+If u want chars like ?!@# u should:\
 `SHIFTDOWN
 /
 1
