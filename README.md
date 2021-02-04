@@ -12,6 +12,7 @@ put payload.ini in same directory, available commands:
 * `BACKSPACE` - To press backspace
 * `CTRLDOWN` - To press ctrl
 * `CTRLUP` - To unpress ctrl
+* `CLIPBOARD` - To copy something to clipboard
 
 You can use just chars (space included) in other lines\
 If u want chars like ?!@# u should:  
